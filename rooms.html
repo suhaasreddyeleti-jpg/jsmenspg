@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#e2d3a8" />
+<meta name="description" content="Room catalogue — JS Mens PG Hostel, Ramapuram, Chennai. Browse sharing rooms and 1 BHK units, view room details and enquire on WhatsApp." />
+<title>Rooms — JS Mens PG Hostel, Ramapuram, Chennai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Yomogi&family=Yuji+Syuku&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=22" />
+</head>
+<body>
+<div class="paper-photo"></div>
+<div class="paper-texture"></div>
+<div class="creases"></div>
+<div class="grain"></div>
+<div class="progress-rail" aria-hidden="true"><i id="progressBar"></i></div>
+
+<nav class="nav" id="siteNav">
+  <a class="nav-mark" href="index.html#top"><img class="nav-logo" src="assets/logo-cream.png" alt="JS Men's PG Hostel" /></a>
+  <div class="nav-links">
+    <a href="index.html#story">Story</a>
+    <a href="rooms.html" aria-current="page">Rooms</a>
+    <a href="index.html#amenities">Amenities</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#location">Location</a>
+  </div>
+  <a class="nav-cta" href="#catalogue">Catalogue</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+</nav>
+
+<main id="top">
+
+  <section class="cat-hero">
+    <div class="wrap">
+      <div class="section-mark reveal">
+        <div class="hanko"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"/></svg><span>間</span></div>
+        <span class="tag">the catalogue</span>
+      </div>
+      <h1 class="reveal">Rooms</h1>
+      <p class="cat-lede brush reveal">Find your space</p>
+      <p class="lede reveal">Choose the room that fits your stay. Prices are monthly; anything unconfirmed is settled on enquiry.</p>
+      <div class="hero-actions reveal">
+        <a class="btn" href="index.html#top">← Back to home</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="torn into-ink" aria-hidden="true"></div>
+
+  <section id="catalogue" class="section-ink">
+    <div class="wrap">
+      <div class="section-mark reveal">
+        <div class="hanko"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"/></svg><span>宿</span></div>
+        <span class="tag">available room types</span>
+      </div>
+      <h2 class="reveal">Ways to stay.</h2>
+      <p class="copy reveal" style="margin-top:22px;">Photographs are reserved and will be added before launch. Everything else below is exactly what has been confirmed — nothing more.</p>
+      <div class="room-grid" id="roomGrid"></div>
+      <p class="amenity-note reveal">Pricing and deposits are subject to current availability and owner confirmation.</p>
+    </div>
+  </section>
+
+  <div class="torn" aria-hidden="true" hidden></div>
+
+  <section id="roomDetail" hidden>
+    <div class="wrap">
+      <a class="btn detail-back" id="detailBack" href="#">← Back to rooms</a>
+      <div id="detailBody"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="hanko stamped" style="margin:0 auto;"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"/></svg><span>JS</span></div>
+  <small>© <span id="year"></span> JS Mens PG Hostel · Ramapuram, Chennai</small>
+  <div class="foot-links">
+    <a href="index.html#rooms">Rooms</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#location">Location</a>
+    <a href="#catalogue">Catalogue</a>
+  </div>
+  <div class="foot-head brush">Get to know us on Instagram</div>
+  <div class="foot-links">
+    <a href="https://www.instagram.com/js_mens_pg/" target="_blank" rel="noopener noreferrer">@js_mens_pg</a>
+  </div>
+  <div class="foot-head brush">Contact us</div>
+  <div class="foot-links">
+    <a id="footerPhoneLink" href="#">Call us</a>
+    <a id="footerWaLink" href="#">WhatsApp</a>
+    <a href="mailto:info.jsmenspg@gmail.com">info.jsmenspg@gmail.com</a>
+  </div>
+</footer>
+
+<a class="wa-fab" id="fabWaBtn" href="#" aria-label="Enquire on WhatsApp">
+  <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.36A10 10 0 1 0 12 2zm0 18.2a8.17 8.17 0 0 1-4.17-1.14l-.3-.18-3 .8.8-2.93-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.13c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.19.87 2.34 1 2.5.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
+  <span class="label">WhatsApp</span>
+</a>
+
+<script src="script.js?v=22" defer></script>
+<script src="rooms.js?v=22" defer></script>
+</body>
+</html>
