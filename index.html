@@ -35,7 +35,12 @@
 
   <section class="hero" id="hero">
     <div class="hero-scene" aria-hidden="true">
-      <img class="hero-art" src="assets/hero-bg.jpg?v=2" alt="" />
+      <picture>
+        <!-- Mobile background image (Portrait, 9:16 aspect ratio recommended) -->
+        <source media="(max-width: 840px)" srcset="assets/hero-bg-mobile.jpg" />
+        <!-- Desktop background image -->
+        <img class="hero-art" src="assets/hero-bg.jpg?v=2" alt="" />
+      </picture>
       <div class="hero-veil"></div>
     </div>
     <div class="wrap">
