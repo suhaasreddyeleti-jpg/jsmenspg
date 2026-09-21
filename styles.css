@@ -376,6 +376,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .notes-grid{ grid-template-columns:1fr; }
   .gallery-grid{ grid-template-columns:1fr; }
   .wa-fab span.label{ display:none; } .wa-fab{ padding:14px; }
+  .hero{ padding: 110px 0 80px; }
+  .hero h1{ font-size: 2.3rem; margin-bottom: 20px; }
+  .hero .lede{ font-size: 1.05rem; }
+  .hero-actions{ margin-top: 28px; gap: 14px; }
+  .hero-actions .btn{ padding: 12px 20px; font-size: 1rem; }
+  .scroll-hint{ bottom: 15px; }
 }
 
 @media (prefers-reduced-motion: reduce){
