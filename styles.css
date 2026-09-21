@@ -376,7 +376,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .notes-grid{ grid-template-columns:1fr; }
   .gallery-grid{ grid-template-columns:1fr; }
   .wa-fab span.label{ display:none; } .wa-fab{ padding:14px; }
-  .hero{ padding: 110px 0 80px; }
+  .hero{ padding: 110px 0 80px; min-height: auto; }
+  .hero-art{ object-fit: contain; object-position: top; height: 100%; width: 100%; }
+  .hero-veil{ background: linear-gradient(180deg, transparent 0%, rgba(10,8,6,0.8) 250px, rgba(10,8,6,1) 320px); }
   .hero h1{ font-size: 2.3rem; margin-bottom: 20px; }
   .hero .lede{ font-size: 1.05rem; }
   .hero-actions{ margin-top: 28px; gap: 14px; }
