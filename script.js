@@ -72,7 +72,7 @@ const defaultPrefill =
   `Hello ${CONFIG.businessName}, I'd like to enquire about room availability. ${CONFIG.pricingMessage}`;
 
 
-["heroWaBtn", "fabWaBtn"].forEach((id) => {
+["heroWaBtn", "fabWaBtn", "aboutWaBtn"].forEach((id) => {
   const el = document.getElementById(id);
 
   if (el) {
@@ -109,6 +109,20 @@ if (footerWaLink) {
 
   footerWaLink.textContent =
     `WhatsApp — ${CONFIG.phone}`;
+
+}
+
+
+const aboutCallBtn =
+  document.getElementById("aboutCallBtn");
+
+if (aboutCallBtn) {
+
+  aboutCallBtn.href =
+    `tel:${CONFIG.phone}`;
+
+  aboutCallBtn.textContent =
+    `Call +91 ${CONFIG.phone}`;
 
 }
 
