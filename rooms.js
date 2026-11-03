@@ -336,7 +336,7 @@
     }
 
     const actions = el("div", "detail-actions");
-    const wa = el("a", "btn btn--gold");
+    const wa = el("a", "btn btn--whatsapp");
     wa.href = roomEnquiryUrl(room);
     wa.target = "_blank";
     wa.rel = "noopener noreferrer";
@@ -345,7 +345,7 @@
     actions.appendChild(wa);
 
     if (phone) {
-      const call = el("a", "btn btn--ghost", "Call now");
+      const call = el("a", "btn btn--call", "Call now");
       call.href = `tel:${phone}`;
       actions.appendChild(call);
     }

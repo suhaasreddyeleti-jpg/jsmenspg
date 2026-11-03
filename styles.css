@@ -211,6 +211,28 @@ h4 {
   background: var(--charcoal);
 }
 
+.btn--whatsapp {
+  background: linear-gradient(180deg, #2fd36b, #1faa54);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(31, 170, 84, 0.35);
+}
+
+.btn--whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(31, 170, 84, 0.45);
+}
+
+.btn--call {
+  background: linear-gradient(180deg, #3b82f6, #1d5fd0);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(29, 95, 208, 0.35);
+}
+
+.btn--call:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(29, 95, 208, 0.45);
+}
+
 .btn--sm {
   padding: 10px 18px;
   font-size: 0.9rem;
