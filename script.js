@@ -89,11 +89,32 @@ if (footerEmail) footerEmail.href = `mailto:${CONFIG.email}`;
    ========================================================================== */
 
 const header = document.querySelector(".site-header");
+const heroBg = document.querySelector(".hero-bg");
+const heroSection = document.querySelector(".hero");
+let scrollTick = false;
+
+function parallax() {
+  if (!heroBg || !heroSection) return;
+  const y = window.scrollY;
+  const h = heroSection.offsetHeight;
+  if (y <= h) {
+    heroBg.style.transform = `translate3d(0, ${y * 0.28}px, 0) scale(${1 + Math.min(y, h) * 0.00012})`;
+  }
+}
 
 function onScroll() {
   if (header) header.classList.toggle("is-scrolled", window.scrollY > 8);
   const toTop = document.getElementById("toTop");
   if (toTop) toTop.style.opacity = window.scrollY > 500 ? "1" : "0";
+  if (!reduceMotion) {
+    if (!scrollTick) {
+      scrollTick = true;
+      requestAnimationFrame(() => {
+        parallax();
+        scrollTick = false;
+      });
+    }
+  }
 }
 
 document.addEventListener("scroll", onScroll, { passive: true });
