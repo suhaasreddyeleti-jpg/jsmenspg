@@ -224,9 +224,8 @@
       body.appendChild(el("p", "room-card__deposit", depositLine(room)));
 
       const foot = el("div", "room-card__foot");
-      const details = el("a", "btn btn--ghost btn--sm", "View Details");
-      details.href = `#${room.id}`;
-      details.classList.add("room-details");
+      const details = el("a", "btn btn--ghost btn--sm room-details", "View Details");
+      details.href = `room.html?room=${encodeURIComponent(room.id)}`;
       foot.appendChild(details);
 
       const wa = el("a", "icon-btn");
@@ -258,7 +257,7 @@
     if (!detailBody) return;
     detailBody.innerHTML = "";
 
-    const wrap = el("div", "room-detail reveal");
+    const wrap = el("div", "room-detail");
 
     const grid = el("div", "detail-grid");
 
@@ -361,66 +360,53 @@
   }
 
   const defaultTitle = document.title;
-  let lastRoutedHash = null;
+
+  const isDetailPage = () =>
+    document.body.hasAttribute("data-room-detail");
+
+  function currentRoomId() {
+    const params = new URLSearchParams(location.search);
+    let id = (params.get("room") || "").trim();
+    if (!id && location.hash) {
+      id = decodeURIComponent(location.hash.replace("#", "")).trim();
+    }
+    return id;
+  }
+
+  function renderNotFound() {
+    detailBody.innerHTML = "";
+    const wrap = el("div", "room-detail");
+    wrap.appendChild(el("h2", null, "Room not found"));
+    wrap.appendChild(
+      el("p", null, "Sorry, we couldn't find that room. Browse the full catalogue instead.")
+    );
+    const back = el("a", "btn btn--gold", "View all rooms");
+    back.href = "rooms.html";
+    wrap.appendChild(back);
+    detailBody.appendChild(wrap);
+  }
 
   function route() {
+    if (!isDetailPage()) return;
     if (!detailSection || !detailBody) return;
 
-    const hash = decodeURIComponent(location.hash.replace("#", "")).trim();
-    const room = hash ? roomById(hash) : null;
-    const changed = hash !== lastRoutedHash;
-    lastRoutedHash = hash;
+    const room = roomById(currentRoomId());
+    detailSection.hidden = false;
+    if (detailBack) detailBack.href = "rooms.html";
 
     if (room) {
       renderDetail(room);
-      detailSection.hidden = false;
-      if (detailBack) detailBack.href = location.pathname;
       document.title = `${room.name} — JS Mens PG Hostel`;
-      if (changed) {
-        requestAnimationFrame(() => {
-          window.scrollTo(0, Math.max(0, detailSection.offsetTop - 90));
-        });
-      }
     } else {
-      const wasDetail = detailSection.hidden === false;
-      detailSection.hidden = true;
-      detailBody.innerHTML = "";
+      renderNotFound();
       document.title = defaultTitle;
-      if (changed && wasDetail) {
-        requestAnimationFrame(() => {
-          const catalogue = document.getElementById("rooms");
-          const y = catalogue ? catalogue.offsetTop - 90 : 0;
-          window.scrollTo(0, Math.max(0, y));
-        });
-      }
     }
   }
 
   /* ------------------------------------------------------------------
-     CLICK DELEGATION — View Details / Back, no reload
+     ENQUIRY DROPDOWN
      ------------------------------------------------------------------ */
 
-  document.addEventListener("click", (event) => {
-    if (!detailSection) return;
-
-    const detailsLink = event.target.closest(".room-details");
-    if (detailsLink) {
-      event.preventDefault();
-      const id = detailsLink.getAttribute("href").split("#")[1];
-      history.pushState(null, "", `#${id}`);
-      route();
-      return;
-    }
-
-    const backLink = event.target.closest(".detail-back");
-    if (backLink) {
-      event.preventDefault();
-      history.pushState(null, "", location.pathname + location.search);
-      route();
-    }
-  });
-
-  /* Populate the enquiry-form room dropdown from the same ROOMS source. */
   function populateRoomSelect() {
     const select = document.getElementById("roomSelect");
     if (!select) return;
