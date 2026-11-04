@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=30" />
+<link rel="stylesheet" href="styles.css?v=31" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -246,12 +246,70 @@
         </div>
       </div>
 
-      <div class="reviews-empty reveal">
-        <strong>Genuine Google reviews appear here.</strong>
-        Verified resident ratings and comments from our Google Business Profile will be shown in this section. We only publish authentic reviews — nothing is invented.
-        <div class="hero-actions" style="justify-content:center; margin-top:20px;">
-          <a class="btn btn--ghost" id="reviewsMapsBtn" href="#" target="_blank" rel="noopener">Find us on Google</a>
+      <div class="reviews-carousel reveal" id="reviewsCarousel">
+        <div class="reviews-viewport">
+          <figure class="review-card is-active">
+            <div class="review-head">
+              <span class="review-avatar" aria-hidden="true">A</span>
+              <div class="review-id">
+                <span class="review-name">Arun Kumar</span>
+                <span class="review-sub">Google review · 4 months ago</span>
+              </div>
+            </div>
+            <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <blockquote class="review-text">I had a very good stay at JS PG. The owner, Anna, is very friendly, and the PG is well maintained. If my work shifts to Chennai again, I will definitely stay at JS PG. I will also recommend others to visit the pg for better understanding...</blockquote>
+          </figure>
+
+          <figure class="review-card">
+            <div class="review-head">
+              <span class="review-avatar" aria-hidden="true">P</span>
+              <div class="review-id">
+                <span class="review-name">Prabhakaran</span>
+                <span class="review-sub">Google review · a year ago</span>
+              </div>
+            </div>
+            <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <blockquote class="review-text">I have been staying here for 8 months from the start, and my experience has been great. The PG is clean and well-maintained, with all the necessary amenities available. The property also ensures a high level of safety, making it a comfortable and secure place to stay.</blockquote>
+          </figure>
+
+          <figure class="review-card">
+            <div class="review-head">
+              <span class="review-avatar" aria-hidden="true">H</span>
+              <div class="review-id">
+                <span class="review-name">Hemanand</span>
+                <span class="review-sub">Local Guide · Google review</span>
+              </div>
+            </div>
+            <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <blockquote class="review-text">One of the best place for PG. Great Amenities provided by them and of course comfort sse thestay as well. Highly recommended.</blockquote>
+          </figure>
         </div>
+
+        <div class="reviews-dots" role="tablist" aria-label="Choose a review">
+          <button type="button" class="review-dot is-active" aria-label="Show review 1"></button>
+          <button type="button" class="review-dot" aria-label="Show review 2"></button>
+          <button type="button" class="review-dot" aria-label="Show review 3"></button>
+        </div>
+
+        <a class="reviews-link" id="reviewsMapsBtn" href="#" target="_blank" rel="noopener">See all reviews on Google &rarr;</a>
       </div>
     </div>
   </section>
@@ -426,7 +484,7 @@
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.36A10 10 0 1 0 12 2zm0 18.2a8.17 8.17 0 0 1-4.17-1.14l-.3-.18-3 .8.8-2.93-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.13c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.19.87 2.34 1 2.5.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
 </a>
 
-<script src="script.js?v=30" defer></script>
-<script src="rooms.js?v=30" defer></script>
+<script src="script.js?v=31" defer></script>
+<script src="rooms.js?v=31" defer></script>
 </body>
 </html>

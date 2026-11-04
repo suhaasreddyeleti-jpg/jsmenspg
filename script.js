@@ -257,3 +257,66 @@ if (reduceMotion) {
 
   window.revealObservers = { io };
 }
+
+/* ==========================================================================
+   REVIEWS CAROUSEL  (auto-rotating single card)
+   ========================================================================== */
+
+const reviewsCarousel = document.getElementById("reviewsCarousel");
+
+if (reviewsCarousel) {
+  const cards = Array.from(reviewsCarousel.querySelectorAll(".review-card"));
+  const dots = Array.from(reviewsCarousel.querySelectorAll(".review-dot"));
+  const DELAY = 5200;
+  let index = 0;
+  let timer = null;
+
+  function showReview(i) {
+    index = (i + cards.length) % cards.length;
+    cards.forEach((card, n) => {
+      card.classList.toggle("is-active", n === index);
+      card.setAttribute("aria-hidden", n === index ? "false" : "true");
+    });
+    dots.forEach((dot, n) => dot.classList.toggle("is-active", n === index));
+  }
+
+  function stopReviews() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  function startReviews() {
+    if (reduceMotion || timer || cards.length < 2) return;
+    timer = setInterval(() => showReview(index + 1), DELAY);
+  }
+
+  dots.forEach((dot, n) => {
+    dot.addEventListener("click", () => {
+      showReview(n);
+      stopReviews();
+      startReviews();
+    });
+  });
+
+  reviewsCarousel.addEventListener("mouseenter", stopReviews);
+  reviewsCarousel.addEventListener("mouseleave", startReviews);
+
+  if ("IntersectionObserver" in window) {
+    const reviewsIo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) startReviews();
+          else stopReviews();
+        });
+      },
+      { threshold: 0.25 }
+    );
+    reviewsIo.observe(reviewsCarousel);
+  } else {
+    startReviews();
+  }
+
+  showReview(0);
+}
