@@ -90,15 +90,23 @@ if (footerEmail) footerEmail.href = `mailto:${CONFIG.email}`;
 
 const header = document.querySelector(".site-header");
 const heroBg = document.querySelector(".hero-bg");
+const heroMark = document.querySelector(".hero-mark");
 const heroSection = document.querySelector(".hero");
+const scrollProgress = document.getElementById("scrollProgress");
 let scrollTick = false;
 
 function parallax() {
-  if (!heroBg || !heroSection) return;
+  if (!heroSection) return;
   const y = window.scrollY;
   const h = heroSection.offsetHeight;
   if (y <= h) {
-    heroBg.style.transform = `translate3d(0, ${y * 0.28}px, 0) scale(${1 + Math.min(y, h) * 0.00012})`;
+    if (heroBg) {
+      heroBg.style.transform = `translate3d(0, ${y * 0.28}px, 0) scale(${1 + Math.min(y, h) * 0.00012})`;
+    }
+    if (heroMark) {
+      heroMark.style.transform = `translate3d(0, calc(-50% + ${y * 0.12}px), 0)`;
+      heroMark.style.opacity = String(Math.max(0, 0.14 * (1 - y / (h * 0.85))));
+    }
   }
 }
 
@@ -106,6 +114,11 @@ function onScroll() {
   if (header) header.classList.toggle("is-scrolled", window.scrollY > 8);
   const toTop = document.getElementById("toTop");
   if (toTop) toTop.style.opacity = window.scrollY > 500 ? "1" : "0";
+  if (scrollProgress) {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    scrollProgress.style.width = (max > 0 ? window.scrollY / max : 0) * 100 + "%";
+  }
   if (!reduceMotion) {
     if (!scrollTick) {
       scrollTick = true;
