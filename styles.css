@@ -370,7 +370,7 @@ h4 {
 .hero-mark {
   position: absolute;
   top: 50%;
-  right: clamp(-30px, 3vw, 60px);
+  right: clamp(28px, 4vw, 72px);
   width: clamp(280px, 40vw, 560px);
   height: auto;
   transform: translateY(-50%);
@@ -1355,7 +1355,7 @@ h4 {
   .hero-mark {
     width: clamp(220px, 42vw, 380px);
     opacity: 0.6;
-    right: -14px;
+    right: 16px;
   }
 
   .amenities-grid {
@@ -1432,7 +1432,7 @@ h4 {
   .hero-mark {
     top: auto;
     bottom: 10px;
-    right: -22px;
+    right: 10px;
     transform: none;
     width: clamp(170px, 52vw, 260px);
     opacity: 0.14;
