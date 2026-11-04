@@ -363,33 +363,21 @@ h4 {
   align-items: center;
   min-height: clamp(560px, 88vh, 860px);
   background:
-    radial-gradient(58% 74% at 50% 42%, rgba(242, 173, 0, 0.12) 0%, rgba(242, 173, 0, 0) 62%),
+    radial-gradient(60% 78% at 76% 46%, rgba(242, 173, 0, 0.12) 0%, rgba(242, 173, 0, 0) 62%),
     linear-gradient(160deg, var(--ivory) 0%, var(--cream) 55%, var(--beige) 100%);
 }
 
 .hero-mark {
   position: absolute;
   top: 50%;
-  right: clamp(28px, 4vw, 64px);
-  width: clamp(260px, 30vw, 520px);
+  right: clamp(28px, 4vw, 72px);
+  width: clamp(280px, 40vw, 560px);
   height: auto;
   transform: translateY(-50%);
   opacity: 0.9;
   z-index: 0;
   pointer-events: none;
-}
-
-@media (max-width: 1200px) {
-  .hero-mark {
-    top: 0;
-    right: auto;
-    bottom: 0;
-    left: 0;
-    width: min(62vw, 460px);
-    transform: none;
-    margin: auto;
-    opacity: 0.12;
-  }
+  will-change: transform, opacity;
 }
 
 .hero-inner {
@@ -1489,6 +1477,12 @@ h4 {
     max-width: 100%;
   }
 
+  .hero-mark {
+    width: clamp(220px, 42vw, 380px);
+    opacity: 0.6;
+    right: 16px;
+  }
+
   .amenities-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1558,6 +1552,15 @@ h4 {
 
   .hero-inner {
     padding-block: 40px 52px;
+  }
+
+  .hero-mark {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+    transform: none;
+    width: clamp(170px, 52vw, 260px);
+    opacity: 0.14;
   }
 
   .hero h1 {
