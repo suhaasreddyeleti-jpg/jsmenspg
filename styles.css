@@ -404,6 +404,18 @@ h4 {
   color: var(--gold-deep);
 }
 
+.hero h1 .hero-sub {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-size: clamp(0.98rem, 1.5vw, 1.16rem);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: var(--muted);
+  max-width: 44ch;
+}
+
 .hero-lede {
   color: var(--muted);
   font-size: 1.16rem;
