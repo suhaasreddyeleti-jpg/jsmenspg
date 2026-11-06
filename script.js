@@ -12,7 +12,7 @@ const CONFIG = {
   businessName: "JS Mens PG Hostel",
   shortName: "JS Mens PG",
   area: "EVP Santhosh Nagar, Ramapuram, Chennai 600089",
-  exactAddress: "Plot No. 78, EVP Santhosh Nagar, Ramapuram, Chennai 600089",
+  exactAddress: "Plot No. 78, 3rd Main Road, EVP Santhosh Nagar, Ramapuram, Chennai 600089",
   phone: "7305169396",
   whatsappNumber: "917305169396",
   email: "info.jsmenspg@gmail.com",
@@ -267,7 +267,7 @@ const reviewsCarousel = document.getElementById("reviewsCarousel");
 if (reviewsCarousel) {
   const cards = Array.from(reviewsCarousel.querySelectorAll(".review-card"));
   const dots = Array.from(reviewsCarousel.querySelectorAll(".review-dot"));
-  const DELAY = 5200;
+  const DELAY = 3000;
   let index = 0;
   let timer = null;
 
