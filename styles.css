@@ -1671,7 +1671,15 @@ h4 {
   }
 
   .amenity-photo-band {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .amenity-photo figcaption {
+    font-size: 0.62rem;
+    padding: 16px 6px 6px;
+    line-height: 1.2;
   }
 
   .form-row {

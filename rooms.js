@@ -24,9 +24,9 @@
       deposit: 10000,
       type: "4 Sharing",
       images: [
-        { src: "assets/4_sharing_main.png", alt: "4 sharing men's PG room at JS Mens PG Hostel, Ramapuram, Chennai — beds, wardrobes and attached washbasin" },
-        { src: "assets/4_sharing_angle.png", alt: "4 sharing room angle showing wooden cots, steel wardrobes and wall-mounted TV" },
-        { src: "assets/4_sharing_sink.png", alt: "Attached washbasin and mirror inside the 4 sharing room bathroom" }
+        { src: "assets/4_sharing_main.webp", alt: "4 sharing men's PG room at JS Mens PG Hostel, Ramapuram, Chennai — beds, wardrobes and attached washbasin" },
+        { src: "assets/4_sharing_angle.webp", alt: "4 sharing room angle showing wooden cots, steel wardrobes and wall-mounted TV" },
+        { src: "assets/4_sharing_sink.webp", alt: "Attached washbasin and mirror inside the 4 sharing room bathroom" }
       ],
       facilities: [
         "Wooden cot with bed and pillow",
@@ -47,7 +47,7 @@
       deposit: 10000,
       type: "3 Sharing",
       images: [
-        { src: "assets/gallery_rooms.png", alt: "3 sharing men's PG room with three furnished beds and wall cupboards at JS Mens PG, Ramapuram" }
+        { src: "assets/gallery_rooms.webp", alt: "3 sharing men's PG room with three furnished beds and wall cupboards at JS Mens PG, Ramapuram" }
       ],
       facilities: [
         "Wooden cot with bed and pillow",
@@ -68,7 +68,7 @@
       deposit: 15000,
       type: "2 Sharing",
       images: [
-        { src: "assets/rest_easy.png", alt: "Furnished 2 sharing plus men's PG room with air conditioning and wall-mounted TV at JS Mens PG" }
+        { src: "assets/rest_easy.webp", alt: "Furnished 2 sharing plus men's PG room with air conditioning and wall-mounted TV at JS Mens PG" }
       ],
       facilities: ["Fully furnished"]
     },
